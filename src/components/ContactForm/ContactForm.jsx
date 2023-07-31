@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { addContact } from 'redux/contactsSlice';
-import { selectorContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import {
   FormContainer,
   Label,
@@ -35,7 +35,7 @@ const initialValues = {
 };
 
 export const ContactForm = () => {
-  const contacts = useSelector(selectorContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = ({ name, number }, { resetForm }) => {
